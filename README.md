@@ -1,2 +1,2 @@
 # Schedule-Plus
-Addition extension for spring annotation @Schedule 
+A simple frame for user to use annotation @Schedule with dynamic properties easily. 
