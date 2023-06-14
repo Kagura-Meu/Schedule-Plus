@@ -1,15 +1,21 @@
 package com.yuuma.config;
 
 import com.yuuma.entity.BaseTaskParam;
+import lombok.Data;
 
-public interface TaskConfiguration<T extends BaseTaskParam> {
+@Data
+public abstract class TaskConfiguration<T extends BaseTaskParam> {
 
-    void paramInitialize();
+    private T param;
 
-    void saveParam();
+    TaskConfiguration(T param){
+        this.param = param;
+    }
 
-    void updateParam();
+    protected abstract void saveTaskParam();
 
-    T getParam();
+    protected abstract void updateTaskParam();
+
+    protected abstract T getTaskParam();
 
 }
