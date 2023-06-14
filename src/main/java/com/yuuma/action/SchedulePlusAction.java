@@ -8,11 +8,7 @@ import org.springframework.scheduling.support.CronTrigger;
 
 public abstract class SchedulePlusAction< T extends BaseTaskParam> implements SchedulingConfigurer {
 
-//    protected T t;
-    private TaskConfiguration<T> taskConfiguration;
-
-
-//    protected abstract void setT(T t);
+    protected TaskConfiguration<T> taskConfiguration;
 
     protected abstract void setTaskConfiguration();
 
