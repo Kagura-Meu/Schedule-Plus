@@ -3,19 +3,13 @@ package com.yuuma.config;
 import com.yuuma.entity.BaseTaskParam;
 import lombok.Data;
 
-@Data
 public abstract class TaskConfiguration<T extends BaseTaskParam> {
 
-    private T param;
 
-    TaskConfiguration(T param){
-        this.param = param;
-    }
+    public abstract void saveTaskParam(T t);
 
-    protected abstract void saveTaskParam();
+    public abstract void updateTaskParam(T t);
 
-    protected abstract void updateTaskParam();
-
-    protected abstract T getTaskParam();
+    public abstract T getTaskParam(T t);
 
 }

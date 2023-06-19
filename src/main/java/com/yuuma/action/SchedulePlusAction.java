@@ -27,7 +27,7 @@ public abstract class SchedulePlusAction< T extends BaseTaskParam> implements Sc
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
         taskRegistrar.addTriggerTask( this::action, triggerContext -> {
-            T t = taskConfiguration.getParam();
+            T t = taskConfiguration.getTaskParam(param);
             return new CronTrigger(t.getCron()).nextExecutionTime(triggerContext);
         });
     }
