@@ -1,4 +1,4 @@
-package com.yuuma.entity;
+package online.yuanpi.entity;
 
 import lombok.Data;
 import org.junit.platform.commons.util.StringUtils;

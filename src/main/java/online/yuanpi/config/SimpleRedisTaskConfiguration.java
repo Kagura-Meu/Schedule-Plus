@@ -1,6 +1,6 @@
-package com.yuuma.config;
+package online.yuanpi.config;
 
-import com.yuuma.entity.BaseTaskParam;
+import online.yuanpi.entity.BaseTaskParam;
 import lombok.AccessLevel;
 import lombok.Getter;
 import org.springframework.data.redis.core.RedisTemplate;

@@ -1,7 +1,7 @@
-package com.yuuma.action;
+package online.yuanpi.action;
 
-import com.yuuma.config.TaskConfiguration;
-import com.yuuma.entity.BaseTaskParam;
+import online.yuanpi.config.TaskConfiguration;
+import online.yuanpi.entity.BaseTaskParam;
 import lombok.Getter;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.SchedulingConfigurer;

@@ -1,7 +1,6 @@
-package com.yuuma.config;
+package online.yuanpi.config;
 
-import com.yuuma.entity.BaseTaskParam;
-import lombok.Data;
+import online.yuanpi.entity.BaseTaskParam;
 
 public abstract class TaskConfiguration<T extends BaseTaskParam> {
 
