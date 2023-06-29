@@ -12,14 +12,14 @@ import org.springframework.scheduling.support.CronTrigger;
 @EnableScheduling
 public abstract class SchedulePlusAction< T extends BaseTaskParam> implements SchedulingConfigurer {
 
-    protected TaskConfiguration<T> taskConfiguration;
-    protected T param;
+    private TaskConfiguration<T> taskConfiguration;
+    private T param;
 
     //注入任务属性对象
-    protected abstract void setParam(T param);
+    protected abstract T setParam();
 
     //注入任务属性配置修改器
-    protected abstract void setTaskConfiguration(TaskConfiguration<T> taskConfiguration);
+    protected abstract TaskConfiguration<T> setTaskConfiguration();
 
     //定时任务主体
     protected abstract void action();
@@ -27,7 +27,7 @@ public abstract class SchedulePlusAction< T extends BaseTaskParam> implements Sc
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
         taskRegistrar.addTriggerTask( this::action, triggerContext -> {
-            T t = taskConfiguration.getTaskParam(param);
+            T t = getTaskConfiguration().getTaskParam(getParam());
             return new CronTrigger(t.getCron()).nextExecutionTime(triggerContext);
         });
     }

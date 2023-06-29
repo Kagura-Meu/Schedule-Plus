@@ -17,7 +17,8 @@ public class SimpleRedisTaskConfiguration<T extends BaseTaskParam> extends TaskC
 
     private final RedisTemplate<String,Object> redisTemplate;
 
-    SimpleRedisTaskConfiguration(RedisTemplate<String,Object> redisTemplate) {
+
+    public SimpleRedisTaskConfiguration(RedisTemplate<String, Object> redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
 
